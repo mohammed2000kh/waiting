@@ -384,7 +384,7 @@
             text-shadow: 0 0 20px rgba(212, 175, 55, 0.2);
             filter: drop-shadow(0 3px 6px rgba(0, 0, 0, 0.2));
             opacity: 0;
-            animation: fadeInText 0.5s ease-out 2.5s forwards, titleGradient 4s ease-in-out infinite 2s;
+            animation: fadeInText 0.5s ease-out 0s forwards, titleGradient 4s ease-in-out infinite 2s;
         }
 
         .typing-text-2::after {
@@ -406,7 +406,7 @@
             font-weight: 300;
             letter-spacing: 0.5px;
             opacity: 0;
-            animation: fadeInText 0.5s ease-out 4s forwards;
+            animation: fadeInText 0.5s ease-out 0s forwards;
         }
 
         @keyframes titleGradient {
@@ -853,17 +853,17 @@
             // First line - starts immediately
             setTimeout(() => {
                 typeWriter(document.getElementById('typing1'), 'قريباً...', 80);
-            }, 500);
+            }, 1000);
 
             // Second line - starts after 2 seconds
             setTimeout(() => {
                 typeWriter(document.getElementById('typing2'), 'الموقع الرسمي لمحافظة اللاذقية', 60);
-            }, 2000);
+            }, 3000);
 
             // Third line - starts after 3.5 seconds
             setTimeout(() => {
                 typeWriter(document.getElementById('typing3'), 'ترقبوا الإطلاق الرسمي قريباً', 50);
-            }, 3500);
+            }, 5500);
         });
 
         // Add subtle parallax effect on mouse move
