@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>قريباً - الموقع الرسمي لمحافظة اللاذقية</title>
+    <title> الموقع الرسمي لمحافظة اللاذقية</title>
 
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&display=swap" rel="stylesheet">
@@ -70,29 +70,30 @@
             height: 4px;
             background: var(--gold);
             border-radius: 50%;
-            opacity: 0.3;
-            animation: float 20s infinite linear;
+            opacity: 0;
+            animation: float 20s linear forwards;
         }
 
         @keyframes float {
             0% {
-                transform: translateY(100vh) translateX(0);
+                transform: translateY(120vh) translateX(0);
                 opacity: 0;
             }
 
-            10% {
+            5% {
                 opacity: 0.3;
             }
 
-            90% {
+            95% {
                 opacity: 0.3;
             }
 
             100% {
-                transform: translateY(-100vh) translateX(100px);
+                transform: translateY(-20vh) translateX(100px);
                 opacity: 0;
             }
         }
+
 
         /* 3D Cubes */
         .scene-3d,
@@ -771,11 +772,12 @@
                 const particle = document.createElement('div');
                 particle.className = 'particle';
                 particle.style.left = Math.random() * 100 + '%';
-                particle.style.animationDelay = Math.random() * 20 + 's';
+                particle.style.animationDelay = (Math.random() * 5) + 's'; // قلل delay
                 particle.style.animationDuration = (15 + Math.random() * 10) + 's';
                 particlesContainer.appendChild(particle);
             }
         }
+
 
         // Typing
         function typeWriter(element, text, speed = 100) {
