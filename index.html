@@ -337,7 +337,7 @@
         /* Typing Effect */
         .typing-container {
             margin-bottom: 20px;
-            min-height: 200px;
+            /* min-height: 200px; */
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -511,6 +511,26 @@
             }
         }
 
+        /* تأثير دخول الصورة */
+        /* تأثير دخول العقاب من فوق لتحت */
+        .eagle-entry {
+            opacity: 0;
+            transform: translateY(-100px) scale(1);
+            animation: eagleEntryTopDown 1.2s ease-out forwards;
+        }
+
+        @keyframes eagleEntryTopDown {
+            0% {
+                opacity: 0;
+                transform: translateY(-100px) scale(1);
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+
         /* Responsive */
         @media (max-width: 768px) {
             .scene-3d {
@@ -563,6 +583,9 @@
                 width: 200px;
                 height: 200px;
             }
+
+
+
 
             .decoration {
                 width: 200px;
@@ -716,9 +739,9 @@
             <div class="typing-line">
                 <h2 class="typing-text-2" id="typing2"></h2>
             </div>
-            <div class="typing-line">
+            <!-- <div class="typing-line">
                 <p class="typing-text-3" id="typing3"></p>
-            </div>
+            </div> -->
         </div>
 
         <div class="decorative-divider">
@@ -731,6 +754,15 @@
     </div>
 
     <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const eagle = document.querySelector('.eagle-container');
+            if (eagle) {
+                eagle.classList.add('eagle-entry'); // يضيف التأثير عند بداية تحميل الصفحة
+            }
+
+            // بقية الكود: particles و typing
+        });
+
         // Particles
         function createParticles() {
             const particlesContainer = document.getElementById('particles');
@@ -755,7 +787,7 @@
 
         document.addEventListener('DOMContentLoaded', () => {
             createParticles();
-            setTimeout(() => typeWriter(document.getElementById('typing1'), 'قريباً...', 80), 1000);
+            setTimeout(() => typeWriter(document.getElementById('typing1'), 'قريباً...', 80), 1700);
             setTimeout(() => typeWriter(document.getElementById('typing2'), 'الموقع الرسمي لمحافظة اللاذقية', 60), 3000);
             setTimeout(() => typeWriter(document.getElementById('typing3'), 'ترقبوا الإطلاق الرسمي قريباً', 50), 5500);
         });
